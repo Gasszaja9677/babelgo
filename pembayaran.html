@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran - BabelGo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="pembayaran-header">
+        <h1>Pembayaran BabelGo</h1>
+        <p>Selesaikan proses pemesanan perjalanan Anda</p>
+    </header>
+
+    <main class="pembayaran-container">
+
+        <section class="pembayaran-card">
+            <h2>Detail Pemesanan</h2>
+
+            <div id="detailPembayaran">
+                <p>Memuat informasi pesanan...</p>
+            </div>
+
+            <div class="status-pembayaran">
+                <h3>Status Pembayaran</h3>
+                <p id="statusPembayaran">Menunggu Pembayaran</p>
+            </div>
+
+            
+<div class="metode-pembayaran">
+    <h3>Informasi Pembayaran</h3>
+
+    <p id="informasiMetode">
+        Silakan ikuti instruksi pembayaran sesuai metode yang dipilih.
+    </p>
+
+    <div id="areaQRIS" class="area-qris" hidden>
+
+        <h3>Pembayaran QRIS BabelGo</h3>
+
+        <p class="nominal-qris">
+            Total Pembayaran
+        </p>
+
+        <h2 id="nominalQRIS">Rp0</h2>
+
+        <div class="qr-placeholder">
+            <div class="qr-kotak">
+                <span>QRIS</span>
+                <strong>DEMO</strong>
+            </div>
+        </div>
+
+        <p class="keterangan-qris">
+            Ini adalah tampilan simulasi QRIS.
+            Kode ini tidak dapat digunakan untuk transaksi sungguhan.
+        </p>
+
+        <button
+            type="button"
+            id="btnSimulasiBayar"
+            class="btn-simulasi-qris">
+            Simulasikan Pembayaran Berhasil
+        </button>
+
+        <p id="hasilSimulasi"></p>
+
+    </div>
+</div>
+
+
+            <a href="index.html" class="btn-kembali">
+                Kembali ke Beranda
+            </a>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

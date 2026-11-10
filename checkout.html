@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - BabelGo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            Babel<span>Go</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="jadwal.html">Jadwal</a>
+            <a href="#tentang">Tentang Kami</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+    </header>
+
+    <section class="checkout-header">
+
+        <h1>Checkout Pemesanan</h1>
+
+        <p>
+            Periksa kembali perjalanan Anda sebelum
+            mengonfirmasi pemesanan.
+        </p>
+
+    </section>
+
+    <section class="checkout-section">
+
+        <div class="checkout-container">
+
+            <div class="checkout-card">
+
+                <h2>Ringkasan Perjalanan</h2>
+
+                <div id="ringkasanPerjalanan">
+                    Memuat data perjalanan...
+                </div>
+
+            </div>
+
+            <div class="checkout-card">
+
+                <h2>Data Pemesan</h2>
+
+                <form id="checkoutForm">
+
+                    <div class="checkout-group">
+
+                        <label for="namaPemesan">
+                            Nama Lengkap
+                        </label>
+
+                        <input
+                            type="text"
+                            id="namaPemesan"
+                            placeholder="Masukkan nama lengkap"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="checkout-group">
+
+                        <label for="emailPemesan">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="emailPemesan"
+                            placeholder="Masukkan email"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="checkout-group">
+
+                        <label for="nomorPemesan">
+                            Nomor HP
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="nomorPemesan"
+                            placeholder="Masukkan nomor HP"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="checkout-group">
+
+                        <label for="metodePembayaran">
+                            Metode Pembayaran
+                        </label>
+
+                        <select id="metodePembayaran" required>
+
+                            <option value="">
+                                Pilih Metode Pembayaran
+                            </option>
+
+                            <option value="Transfer Bank">
+                                Transfer Bank
+                            </option>
+
+                            <option value="E-Wallet">
+                                E-Wallet
+                            </option>
+                           
+                            <option value="QRIS">
+                                QRIS (Scan QR)
+                            </option>
+
+                            <option value="Bayar di Tempat">
+                                Bayar di Tempat
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="total-pembayaran">
+
+                        <p>Total Pembayaran</p>
+
+                        <h2 id="totalHarga">
+                            Rp0
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn-konfirmasi"
+                    >
+                        Konfirmasi Pemesanan
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>&copy; 2026 BabelGo. All Rights Reserved.</p>
+
+        <p>Kelompok 6 - E-Commerce</p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

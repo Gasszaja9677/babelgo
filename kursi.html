@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Kursi - BabelGo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            Babel<span>Go</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="jadwal.html">Jadwal</a>
+            <a href="#tentang">Tentang Kami</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+    </header>
+
+    <section class="kursi-header">
+
+        <h1>Pilih Kursi Perjalanan</h1>
+
+        <p>
+            Pilih kursi yang tersedia untuk perjalanan Anda.
+        </p>
+
+    </section>
+
+    <section class="kursi-section">
+
+        <div class="info-perjalanan" id="infoPerjalanan">
+
+            Memuat informasi perjalanan...
+
+        </div>
+
+        <div class="kursi-container">
+
+            <h2>Denah Kursi Kendaraan</h2>
+
+            <div class="keterangan-kursi">
+
+                <div>
+                    <span class="contoh-kursi tersedia"></span>
+                    Tersedia
+                </div>
+
+                <div>
+                    <span class="contoh-kursi dipilih"></span>
+                    Dipilih
+                </div>
+
+                <div>
+                    <span class="contoh-kursi terisi"></span>
+                    Terisi
+                </div>
+
+            </div>
+
+
+            <div class="denah-kendaraan">
+
+                <div class="area-driver">
+                    <span>🚘 Pengemudi</span>
+                </div>
+
+                <div id="daftarKursi" class="daftar-kursi">
+
+                </div>
+
+            </div>
+
+            <div class="ringkasan-kursi">
+
+                <p>
+                    Nomor Kursi:
+                    <strong id="nomorKursi">Belum dipilih</strong>
+                </p>
+
+                <button
+                    type="button"
+                    id="btnLanjutCheckout"
+                    class="btn-lanjut-kursi"
+                    disabled
+                >
+                    Lanjut ke Checkout
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>&copy; 2026 BabelGo. All Rights Reserved.</p>
+
+        <p>Kelompok 6 - E-Commerce</p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

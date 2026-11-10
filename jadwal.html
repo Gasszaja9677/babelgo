@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cari Perjalanan - BabelGo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            Babel<span>Go</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="jadwal.html">Jadwal</a>
+            <a href="#tentang">Tentang Kami</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+        <div class="nav-button">
+            <a href="login.html" class="btn-login">Login</a>
+            <a href="register.html" class="btn-register">Daftar</a>
+        </div>
+
+    </header>
+
+    <section class="jadwal-header">
+
+        <h1>Cari Perjalanan Anda</h1>
+
+        <p>
+            Temukan rute dan jadwal perjalanan
+            bersama BabelGo dengan mudah.
+        </p>
+
+    </section>
+
+    <section class="pencarian-section">
+
+        <div class="pencarian-box">
+
+            <h2>Pesan Tiket Perjalanan</h2>
+
+            <form id="jadwalForm">
+
+                <div class="form-jadwal">
+
+                    <div class="form-group">
+                        <label for="asal">Kota Asal</label>
+
+                        <select id="asal" required>
+                            <option value="">Pilih Kota Asal</option>
+                            <option value="Pangkalpinang">Pangkalpinang</option>
+                            <option value="Sungailiat">Sungailiat</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="tujuan">Kota Tujuan</label>
+
+                        <select id="tujuan" required>
+                            <option value="">Pilih Kota Tujuan</option>
+                            <option value="Sungailiat">Sungailiat</option>
+                            <option value="Pangkalpinang">Pangkalpinang</option>
+                            <option value="Koba">Koba</option>
+                            <option value="Toboali">Toboali</option>
+                            <option value="Belinyu">Belinyu</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Perjalanan</label>
+
+                        <input
+                            type="date"
+                            id="tanggal"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn-cari">
+                    Cari Jadwal Perjalanan
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <section class="hasil-section">
+
+        <h2>Jadwal Perjalanan Tersedia</h2>
+
+        <div id="hasilJadwal" class="hasil-jadwal">
+
+            <p class="pesan-awal">
+                Silakan masukkan kota asal, tujuan,
+                dan tanggal perjalanan untuk mencari jadwal.
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>&copy; 2026 BabelGo. All Rights Reserved.</p>
+        <p>Kelompok 6 - E-Commerce</p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

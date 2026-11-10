@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - BabelGo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="admin-sidebar">
+
+        <h2>Babel<span>Go</span></h2>
+        <p class="admin-label">ADMIN PANEL</p>
+
+        <nav class="admin-menu">
+            <a href="#dashboard" class="active">Dashboard</a>
+            <a href="#pelanggan">Pelanggan</a>
+            <a href="#pemesanan">Pemesanan</a>
+            <a href="#kendaraan">Kendaraan</a>
+            <a href="#driver">Driver</a>
+            <a href="#jadwal-admin">Jadwal Perjalanan</a>
+            <a href="#transaksi">Transaksi</a>
+        </nav>
+
+        <a href="index.html" class="admin-logout">
+            Kembali ke Website
+        </a>
+
+    </aside>
+
+    <main class="admin-main">
+
+        <header class="admin-topbar">
+            <div>
+                <h1>Dashboard Admin</h1>
+                <p>Selamat datang di panel pengelolaan BabelGo.</p>
+            </div>
+
+            <div class="admin-profile">
+                <span>Administrator</span>
+                <div class="admin-avatar">A</div>
+            </div>
+        </header>
+
+        <section id="dashboard" class="admin-section">
+
+            <h2>Ringkasan Sistem</h2>
+
+            <div class="admin-stats">
+
+                <div class="stat-card">
+                    <p>Total Pelanggan</p>
+                    <h3 id="totalPelanggan">0</h3>
+                    <span>Jumlah akun terdaftar</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Total Pemesanan</p>
+                    <h3 id="totalPemesanan">0</h3>
+                    <span>Jumlah pesanan tersimpan</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Total Pendapatan</p>
+                    <h3 id="totalPendapatan">Rp0</h3>
+                    <span>Akumulasi pembayaran tercatat</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Status Sistem</p>
+                    <h3 class="status-aktif">Aktif</h3>
+                    <span>Dashboard BabelGo</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="admin-section">
+
+            <h2>Menu Pengelolaan</h2>
+
+            <div class="admin-grid">
+
+                <div class="admin-card" id="menu-pelanggan">
+                    <h3>Data Pelanggan</h3>
+                    <p>Melihat jumlah dan data akun pelanggan BabelGo.</p>
+                    <a href="#pelanggan">Lihat Ringkasan</a>
+                </div>
+
+                <div class="admin-card" id="pemesanan">
+                    <h3>Data Pemesanan</h3>
+                    <p>Memantau aktivitas pemesanan perjalanan.</p>
+                    <a href="#transaksi">Lihat Ringkasan</a>
+                </div>
+
+                <div class="admin-card" id="menu-kendaraan">
+                    <h3>Data Kendaraan</h3>
+                    <p>Pengelolaan informasi kendaraan transportasi.</p>
+                    <a href="#kendaraan">Menu Kendaraan</a>
+                </div>
+
+                <div class="admin-card" id="menu-driver">
+                    <h3>Data Driver</h3>
+                    <p>Pengelolaan informasi pengemudi.</p>
+                    <a href="#driver">Menu Driver</a>
+                </div>
+
+                <div class="admin-card" id="menu-jadwal">
+                    <h3>Jadwal Perjalanan</h3>
+                    <p>Pengelolaan rute dan waktu keberangkatan.</p>
+                    <a href="#jadwal-admin">menu Jadwal</a>
+                </div>
+
+                <div class="admin-card" id="menu-transaksi">
+                    <h3>Data Transaksi</h3>
+                    <p>Memantau informasi pembayaran pelanggan.</p>
+                    <a href="#transaksi">Lihat Ringkasan</a>
+                </div>
+
+            </div>
+
+        </section>
+
+<section id="kendaraan" class="admin-section">
+
+    <h2>Kelola Data Kendaraan</h2>
+
+    <p>Tambah dan kelola informasi kendaraan BabelGo.</p>
+
+    <div class="admin-card">
+
+        <h3>Tambah Kendaraan</h3>
+
+        <form id="formKendaraan">
+
+            <div class="form-group">
+                <label>Nama Kendaraan</label>
+                <input type="text" id="namaKendaraan"
+                    placeholder="Contoh: Bus BabelGo" required>
+            </div>
+
+            <div class="form-group">
+                <label>Nomor Polisi</label>
+                <input type="text" id="platKendaraan"
+                    placeholder="Contoh: BN 1234 AB" required>
+            </div>
+
+            <div class="form-group">
+                <label>Kapasitas Kursi</label>
+                <input type="number" id="kapasitasKendaraan"
+                    placeholder="Contoh: 12" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label>Status Kendaraan</label>
+                <select id="statusKendaraan" required>
+                    <option value="Aktif">Aktif</option>
+                    <option value="Perawatan">Perawatan</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-cari">
+                Simpan Kendaraan
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="admin-card">
+
+        <h3>Daftar Kendaraan</h3>
+
+        <div style="overflow-x:auto;">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Kendaraan</th>
+                        <th>Nomor Polisi</th>
+                        <th>Kapasitas</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="daftarKendaraan">
+                    <tr>
+                        <td colspan="6">
+                            Belum ada data kendaraan.
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="jadwal-admin" class="admin-section">
+
+    <h2>Kelola Jadwal Perjalanan</h2>
+
+    <p>Tambah dan kelola rute serta jadwal keberangkatan BabelGo.</p>
+
+    <div class="admin-card">
+
+        <h3>Tambah Jadwal Perjalanan</h3>
+
+        <form id="formJadwalAdmin">
+
+            <div class="form-group">
+                <label>Kota Asal</label>
+                <select id="asalJadwal" required>
+                    <option value="">Pilih Kota Asal</option>
+                    <option value="Pangkalpinang">Pangkalpinang</option>
+                    <option value="Sungailiat">Sungailiat</option>
+                    <option value="Koba">Koba</option>
+                    <option value="Toboali">Toboali</option>
+                    <option value="Belinyu">Belinyu</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Kota Tujuan</label>
+                <select id="tujuanJadwal" required>
+                    <option value="">Pilih Kota Tujuan</option>
+                    <option value="Pangkalpinang">Pangkalpinang</option>
+                    <option value="Sungailiat">Sungailiat</option>
+                    <option value="Koba">Koba</option>
+                    <option value="Toboali">Toboali</option>
+                    <option value="Belinyu">Belinyu</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Jam Keberangkatan</label>
+                <input type="time" id="jamJadwal" required>
+            </div>
+
+            <div class="form-group">
+                <label>Harga Tiket (Rp)</label>
+                <input
+                    type="number"
+                    id="hargaJadwal"
+                    placeholder="Contoh: 35000"
+                    min="1"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Kapasitas Kursi</label>
+                <input
+                    type="number"
+                    id="kursiJadwal"
+                    placeholder="Contoh: 12"
+                    min="1"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn-cari">
+                Simpan Jadwal
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="admin-card">
+
+        <h3>Daftar Jadwal Perjalanan</h3>
+
+        <div style="overflow-x:auto;">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Kota Asal</th>
+                        <th>Kota Tujuan</th>
+                        <th>Jam</th>
+                        <th>Harga</th>
+                        <th>Kapasitas</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="daftarJadwalAdmin">
+                    <tr>
+                        <td colspan="7">
+                            Belum ada data jadwal.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="driver" class="admin-section">
+
+    <h2>Kelola Data Driver</h2>
+
+    <p>Tambah dan kelola informasi pengemudi BabelGo.</p>
+
+    <div class="admin-card">
+
+        <h3>Tambah Driver</h3>
+
+        <form id="formDriver">
+
+            <div class="form-group">
+                <label>Nama Driver</label>
+                <input
+                    type="text"
+                    id="namaDriver"
+                    placeholder="Masukkan nama driver"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Nomor Telepon</label>
+                <input
+                    type="tel"
+                    id="teleponDriver"
+                    placeholder="Contoh: 08xxxxxxxxxx"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Nomor SIM</label>
+                <input
+                    type="text"
+                    id="simDriver"
+                    placeholder="Masukkan nomor SIM"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Status Driver</label>
+                <select id="statusDriver" required>
+                    <option value="Aktif">Aktif</option>
+                    <option value="Tidak Aktif">Tidak Aktif</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-cari">
+                Simpan Driver
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="admin-card">
+
+        <h3>Daftar Driver</h3>
+
+        <div style="overflow-x:auto;">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Driver</th>
+                        <th>Nomor Telepon</th>
+                        <th>Nomor SIM</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="daftarDriver">
+                    <tr>
+                        <td colspan="6">
+                            Belum ada data driver.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="pelanggan" class="admin-section">
+
+    <h2>Kelola Data Pelanggan</h2>
+
+    <p>Daftar akun pelanggan yang telah terdaftar di BabelGo.</p>
+
+    <div class="admin-card">
+
+        <h3>Daftar Pelanggan</h3>
+
+        <div style="overflow-x:auto;">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Email</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="daftarPelangganAdmin">
+                    <tr>
+                        <td colspan="4">
+                            Belum ada pelanggan.
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="transaksi" class="admin-section">
+
+    <h2>Kelola Transaksi Pemesanan</h2>
+
+    <p>Daftar seluruh transaksi pemesanan pelanggan BabelGo.</p>
+
+    <div class="admin-card">
+
+        <h3>Daftar Transaksi</h3>
+
+        <div style="overflow-x:auto;">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nomor Pesanan</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Rute</th>
+                        <th>Tanggal</th>
+                        <th>Kursi</th>
+                        <th>Total</th>
+                        <th>Metode</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="daftarTransaksiAdmin">
+                    <tr>
+                        <td colspan="10">
+                            Belum ada transaksi.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <section class="admin-section admin-information">
+
+            <h2>Informasi Sistem</h2>
+
+            <p>
+                BabelGo merupakan platform pemesanan transportasi
+                online yang membantu pelanggan melakukan pencarian
+                rute, memilih jadwal, memilih kursi, dan melakukan
+                pemesanan perjalanan.
+            </p>
+
+            <p>
+                Dashboard ini digunakan sebagai pusat pemantauan
+                aktivitas operasional BabelGo.
+            </p>
+
+        </section>
+
+        <footer class="admin-footer">
+            &copy; 2026 BabelGo - Kelompok 6 E-Commerce
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
